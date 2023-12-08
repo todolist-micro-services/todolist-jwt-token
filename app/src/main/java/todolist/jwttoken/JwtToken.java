@@ -27,7 +27,7 @@ public class JwtToken {
                 .signWith(hmacKey)
                 .compact();
 
-        jwtTokenType.setJwtValue(jwtToken);
+        jwtTokenType.setJwtValue(jwtToken.substring(0, Math.min(250, jwtToken.length())));
         jwtTokenType.setExpirationDate(expirationDateTime);
         return jwtTokenType;
     }

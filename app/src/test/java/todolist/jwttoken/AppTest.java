@@ -32,4 +32,15 @@ class AppTest {
         assertNotEquals(tomorrow.getDayOfMonth(), token.getExpirationDate().getDayOfMonth());
         assertNotNull(token.getJwtValue());
     }
+
+    @Test void jwtValueLength() {
+        String secret = "asdfSFS34wfsdfsdfSDSD32dfsddDDerQSNCK34SOWEK5354fdgdf4";
+        String name = "John Doe";
+        String email = "johndoe@gmail.com";
+        String subject = "John";
+        int nbrHour = 24;
+        JwtTokenType token = JwtToken.createJwtToken(secret, name, email, subject, nbrHour);
+
+        assertTrue(token.getJwtValue().length() <= 255);
+    }
 }
