@@ -18,8 +18,6 @@ public class JwtToken {
         LocalDateTime expirationDateTime = currentDateTime.plusHours(nbrHour);
         Key hmacKey = new SecretKeySpec(Base64.getDecoder().decode(secret), SignatureAlgorithm.HS256.getJcaName());
         String jwtToken = Jwts.builder()
-                .claim("name", name)
-                .claim("email", email)
                 .setSubject(subject)
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(Date.from(currentDateTime.atZone(ZoneId.systemDefault()).toInstant()))
@@ -27,7 +25,7 @@ public class JwtToken {
                 .signWith(hmacKey)
                 .compact();
 
-        jwtTokenType.setJwtValue(jwtToken.substring(0, Math.min(250, jwtToken.length())));
+        jwtTokenType.setJwtValue(jwtToken);
         jwtTokenType.setExpirationDate(expirationDateTime);
         return jwtTokenType;
     }
