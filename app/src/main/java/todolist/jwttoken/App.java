@@ -35,6 +35,7 @@ public class App {
 
         JwtTokenType token = JwtToken.createJwtToken(secret, name, email, subject, nbrHour);
         System.out.println(token.getJwtValue());
+        System.out.println(token.getJwtValue().length());
         System.out.println(token.getExpirationDate().toString());
     }
 }
