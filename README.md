@@ -1,8 +1,8 @@
-![pipeline](https://gitlab.com/todolist-micro-services/todolist-jwt-token/badges/master/pipeline.svg?ignore_skipped=true)
-
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+
+![pipeline](https://gitlab.com/todolist-micro-services/todolist-jwt-token/badges/main/pipeline.svg?ignore_skipped=true)
 # todolist-jwt-token
 
 This project contain the data type JwtTokenType and the function to generate a jwt token.
